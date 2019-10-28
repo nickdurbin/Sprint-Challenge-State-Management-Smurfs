@@ -32,6 +32,7 @@ const SmurfForm = () => {
   return (
     <div className='formContainer'>
       <form onSubmit={handleSubmit}>
+      <h1>Smurf Creator</h1>
         <input
           type="text"
           name="name"
@@ -53,7 +54,7 @@ const SmurfForm = () => {
           value={newSmurf.height}
           onChange={handleChanges}
         />
-        <button type="submit">
+        <button className="addBtn btn" type="submit">
           Add
         </button>
       </form>

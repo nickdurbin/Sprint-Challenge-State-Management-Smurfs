@@ -22,7 +22,7 @@ function Smurf() {
           <h3>{smurf.age}</h3>
           <h3>{smurf.height}</h3>
         </div>
-        <button onClick={handleDelete} value={smurf.id}>
+        <button className='deleteBtn btn' onClick={handleDelete} value={smurf.id}>
             Delete
         </button>
         </>

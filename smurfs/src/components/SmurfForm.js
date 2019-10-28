@@ -33,6 +33,7 @@ const SmurfForm = () => {
     <div className='formContainer'>
       <form onSubmit={handleSubmit}>
       <h1>Smurf Creator</h1>
+      <hr />
         <input
           type="text"
           name="name"

@@ -19,8 +19,8 @@ function Smurf() {
         <>
         <div className='smurfDetails' key={smurf.id} index={index}>
           <h2>{smurf.name}</h2>
-          <h3>{smurf.age}</h3>
-          <h3>{smurf.height}</h3>
+          <h3>age: {smurf.age}</h3>
+          <h3>size: {smurf.height}</h3>
         </div>
         <button className='deleteBtn btn' onClick={handleDelete} value={smurf.id}>
             Delete

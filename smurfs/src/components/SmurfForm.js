@@ -20,13 +20,17 @@ const SmurfForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    setNewSmurf({
-      name: "",
-      age: "",
-      height: "",
-      id: ""
-    });
-    dispatch(createSmurf(newSmurf));
+    if (`newSmurf.${e.target.value}` !== '') {
+      dispatch(createSmurf(newSmurf));
+      setNewSmurf({
+        name: "",
+        age: "",
+        height: "",
+        id: ""
+      });
+    } else {
+      return e.target.value
+    }
   };
 
   return (

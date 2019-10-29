@@ -7,9 +7,14 @@ const SmurfForm = () => {
   const [newSmurf, setNewSmurf] = useState({
     name: "",
     age: "",
-    height: "",
-    id: ""
+    height: ""
   });
+
+  const [errors, setErrors] = useState({
+    name: "",
+    age: "",
+    height: ""
+  })
 
   const handleChanges = e => {
     setNewSmurf({
@@ -20,17 +25,12 @@ const SmurfForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (`newSmurf.${e.target.value}` !== '') {
-      dispatch(createSmurf(newSmurf));
-      setNewSmurf({
-        name: "",
-        age: "",
-        height: "",
-        id: ""
-      });
-    } else {
-      return e.target.value
-    }
+
+    if (!newSmurf.name) {
+      return setErrors({ ...errors, 
+        name: "Name cannot be empty!" })
+    } 
+    dispatch(createSmurf(newSmurf));
   };
 
   return (
@@ -38,6 +38,7 @@ const SmurfForm = () => {
       <form onSubmit={handleSubmit}>
       <h1>Smurf Creator</h1>
       <hr />
+        {errors.name && <p>{errors.name}</p>}
         <input
           type="text"
           name="name"
